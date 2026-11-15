@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, My Love ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; overflow-x: hidden;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #fff; text-align: center;
+      background: radial-gradient(circle at top, #743b68 0%, #351b45 48%, #160f2c 100%);
+      display: grid; place-items: center; padding: 24px;
+    }
+    .card {
+      width: min(100%, 680px); padding: 42px 26px; border-radius: 28px;
+      background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.25);
+      box-shadow: 0 18px 60px rgba(0,0,0,.3); backdrop-filter: blur(10px);
+      position: relative; z-index: 2;
+    }
+    .small { letter-spacing: 4px; text-transform: uppercase; color: #ffd5e6; font: 12px Arial, sans-serif; }
+    h1 { font-size: clamp(2.4rem, 8vw, 4.5rem); margin: 18px 0 8px; color: #ffe0ed; }
+    .name { color: #ffd0a8; }
+    .cake { font-size: 68px; margin: 12px 0; animation: bob 2s ease-in-out infinite; }
+    p { font-size: 1.13rem; line-height: 1.75; color: #fff2f7; }
+    button {
+      border: 0; border-radius: 999px; padding: 15px 25px; margin-top: 18px;
+      background: linear-gradient(90deg, #ff8fb8, #ffc28c); color: #431c3d;
+      font-size: 1rem; font-weight: bold; cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,.2);
+    }
+    button:hover { transform: translateY(-2px); }
+    #message { display: none; margin: 26px auto 0; max-width: 520px; padding: 22px;
+      border-radius: 18px; background: rgba(255,255,255,.12); }
+    #message p { margin: 8px 0; }
+    .footer { margin-top: 28px; font: 12px Arial, sans-serif; color: #f7cfe0; opacity: .85; }
+    .heart { position: fixed; bottom: -30px; color: #ff9fca; opacity: .7; animation: floatUp 8s linear infinite; z-index: 1; }
+    @keyframes floatUp { to { transform: translateY(-115vh) rotate(25deg); opacity: 0; } }
+    @keyframes bob { 50% { transform: translateY(-9px); } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="small">A little surprise, made with love</div>
+    <div class="cake">🎂</div>
+    <h1>Happy Birthday,<br><span class="name">My Love</span> ❤️</h1>
+    <p>Today is all about you — your smile, your kindness, and the beautiful happiness you bring into my life.</p>
+    <p>I hope your day is filled with love, laughter, sweet memories, and everything your heart wishes for.</p>
+    <button onclick="reveal()">Open your little surprise 💌</button>
+    <section id="message">
+      <p>To my favourite person,</p>
+      <p>You make ordinary days feel special just by being in them. I’m so lucky to have you in my life. Keep smiling, keep shining, and never forget how loved you are.</p>
+      <p><strong>Happy Birthday, sweetheart! I love you so much. ❤️</strong></p>
+      <p>Forever yours 💗</p>
+    </section>
+    <div class="footer">Made especially for you ✨</div>
+  </main>
+  <script>
+    function reveal() {
+      document.getElementById('message').style.display = 'block';
+      for (let i = 0; i < 24; i++) {
+        const heart = document.createElement('span');
+        heart.className = 'heart';
+        heart.textContent = ['❤', '💗', '💕', '✨'][Math.floor(Math.random() * 4)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = (16 + Math.random() * 22) + 'px';
+        heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 10000);
+      }
+    }
+  </script>
+</body>
+</html>
